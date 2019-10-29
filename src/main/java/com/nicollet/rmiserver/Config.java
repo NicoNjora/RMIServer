@@ -2,6 +2,8 @@ package com.nicollet.rmiserver;
 
 import com.nicollet.rmiserver.services.HelloWorldRMI;
 import com.nicollet.rmiserver.services.HelloWorldRMIImpl;
+import com.nicollet.rmiserver.services.StudentService;
+import com.nicollet.rmiserver.services.StudentServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.remoting.rmi.RmiServiceExporter;
@@ -14,9 +16,13 @@ public class Config {
     RemoteExporter registerRMIExporter() {
 
         RmiServiceExporter exporter = new RmiServiceExporter();
-        exporter.setServiceName("helloworldrmi");
-        exporter.setServiceInterface(HelloWorldRMI.class);
-        exporter.setService(new HelloWorldRMIImpl());
+//        exporter.setServiceName("helloworldrmi");
+//        exporter.setServiceInterface(HelloWorldRMI.class);
+//        exporter.setService(new HelloWorldRMIImpl());
+
+        exporter.setServiceName("studentrmi");
+        exporter.setServiceInterface(StudentService.class);
+        exporter.setService(new StudentServiceImpl());
 
         return exporter;
     }
