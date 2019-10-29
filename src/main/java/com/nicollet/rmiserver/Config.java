@@ -16,9 +16,6 @@ public class Config {
     RemoteExporter registerRMIExporter() {
 
         RmiServiceExporter exporter = new RmiServiceExporter();
-//        exporter.setServiceName("helloworldrmi");
-//        exporter.setServiceInterface(HelloWorldRMI.class);
-//        exporter.setService(new HelloWorldRMIImpl());
 
         exporter.setServiceName("studentrmi");
         exporter.setServiceInterface(StudentService.class);
